@@ -12,3 +12,10 @@ function App() {
 }
 
 export default App;
+
+
+/**       NAVBAR
+ * 
+ * https://www.geeksforgeeks.org/create-a-responsive-navbar-using-reactjs/
+ * https://pigne.org/teaching/webdev1/lecture/ReactRouter
+ */
