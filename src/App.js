@@ -19,3 +19,9 @@ export default App;
  * https://www.geeksforgeeks.org/create-a-responsive-navbar-using-reactjs/
  * https://pigne.org/teaching/webdev1/lecture/ReactRouter
  */
+
+/**       CodiMD Instructions
+ *  
+ * https://hackmd.diverse-team.fr/s/HkpQ2YdHw
+ * 
+ */
