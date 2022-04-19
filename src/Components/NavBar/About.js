@@ -1,6 +1,7 @@
-import React from 'react'
-import Dev from '../Components/Dev'
-import charly from '../Images/charly.jpeg'
+import React from 'react';
+import Dev from '../../Components/Dev.js';
+import charly from '../../Images/CharlyB.jpg'
+//import charly from '../../Images/charly.jpeg'
 
 class About extends React.Component{
     render(){

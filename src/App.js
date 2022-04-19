@@ -1,27 +1,22 @@
 import './App.css';
 
-import Beverages from './Components/Beverages';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import NavBar from './Components/NavBar.js';
+import Intro from './Components/NavBar/Intro.js';
+import Main from './Components/NavBar/Main.js';
+import About from './Components/NavBar/About.js';
 
 function App() {
   return (
-    <div className="App">
-      Bonjour le monde
-      <Beverages/>
-    </div>
-  );
+    <Router>
+      <NavBar/>
+      <Routes>
+        <Route path='/' exact element={<Intro/>} />
+        <Route path='/main' element={<Main/>} />
+        <Route path='/about' element={<About/>}/>
+      </Routes>
+    </Router>
+    );
 }
 
 export default App;
-
-
-/**       NAVBAR
- * 
- * https://www.geeksforgeeks.org/create-a-responsive-navbar-using-reactjs/
- * https://pigne.org/teaching/webdev1/lecture/ReactRouter
- */
-
-/**       CodiMD Instructions
- *  
- * https://hackmd.diverse-team.fr/s/HkpQ2YdHw
- * 
- */

@@ -1,5 +1,5 @@
 import React from 'react';
-import Beverages from '../Components/Beverages';
+import Beverages from '../Beverages';
 
 class Main extends React.Component{
     render(){
