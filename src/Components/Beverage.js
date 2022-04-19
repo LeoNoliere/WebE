@@ -36,10 +36,10 @@ class Beverage extends React.Component{
     render(){
         return(
             <div>
-                <h1>{this.props.beverageName} - {this.state.beverageID}</h1>
+                <h1>{this.props.beverageName} - {this.props.productorName}</h1>
                 <p>
+                    <img src={this.props.image} alt={this.props.beverageName} height="200" width="200"></img><br/>
                     Produit par: {this.props.productorName}<br/>
-                    <img src={this.props.image} height="200" width="200"></img><br/>
                     Note: {this.props.grade}/5 <br/>
                     Choix de : {this.props.selectorID}
                     (Charly: 0 ; Jules: 1; Autre: +1) <br/>
