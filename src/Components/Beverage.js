@@ -22,9 +22,7 @@ class Beverage extends React.Component{
             beverageName: '',
             productorName: '',
             image: new Image(),
-            grade: 0,
-            selectorID: 0,
-            colorTag: ''
+            grade: 0
         }
 
     }
@@ -41,11 +39,8 @@ class Beverage extends React.Component{
                     <img src={this.props.image} alt={this.props.beverageName} height="200" width="200"></img><br/>
                     Produit par: {this.props.productorName}<br/>
                     Note: {this.props.grade}/5 <br/>
-                    Choix de : {this.props.selectorID}
-                    (Charly: 0 ; Jules: 1; Autre: +1) <br/>
-                    Couleur qui sera sélectionné en fond: {this.props.colorTag}
                 </p>
-                <button onClick={this.handleChange}>Supprimer occurence</button>
+                <button onClick={this.handleChange}>Supprimer</button>
             </div>
         )
     }

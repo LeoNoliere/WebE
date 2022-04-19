@@ -18,60 +18,15 @@ class Beverages extends React.Component{
                 <Beverage beverageName="Pommes préssées" 
                     productorName="Andros"
                     image={andros_AppleJuice}
-                    grade={5}
-                    selectorID={0}
-                    colorTag='#de9de0'/>,
+                    grade={5}/>,
                 <Beverage beverageName="Thé Glacé Bio" 
                     productorName="Honest"
                     image={theglace}
-                    grade={5}
-                    selectorID={0}
-                    colorTag='#de9de0'/>    
+                    grade={5}/>    
             ]
         }
     }
 
-    /*
-    componentDidMount(){
-        this.state.listBeverages.push(
-        <Beverage beverageName="Pommes préssées" 
-        productorName="Andros"
-        image={andros_AppleJuice}
-        grade={5}
-        selectorID={0}
-        colorTag='#de9de0'/>
-        );
-
-        this.state.listBeverages.push(
-        <Beverage beverageName="Thé Glacé Bio" 
-        productorName="Honest"
-        image={theglace}
-        grade={5}
-        selectorID={0}
-        colorTag='#de9de0'/>
-        );
-
-        console.log("Boissons: " + this.state.listBeverages);
-    }
-
-    /*
-    componentWillUnmount(){
-        this.state.listBeverages.pop();
-        this.state.listBeverages.pop();
-    }
-    */
-
-    /*
-    showBeverages(){
-        const numbers = [1, 2, 3, 4, 5];
-        const listItems = numbers.map((number) =>
-            <li>{number}</li>
-        );
-        return(
-            <ul>{listItems}</ul>
-        )
-    }
-    */
 
     showBeverage(){
         const listItems = this.state.listBeverages.map((e) =>
