@@ -18,12 +18,28 @@
 
 .worstDev
 {
+	text-align: center;
+	color: white;
+	background-image: url("../Images/poop.png");
+	background-repeat: repeat;
+	background-position: center;
+	background-size: 75% auto;
 	grid-column: 1 / 2;
 	grid-row: 2 / 3;
+	width: 100%;
+	height: 100%;
 }
 
 .bestDev
 {
+	text-align: center;
+	color: white;
+	background-image: url("../Images/god.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% auto;
 	grid-column: 2 / 3;
 	grid-row: 2 / 3;
+	width: 100%;
+	height: 100%;
 }
