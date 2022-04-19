@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { v4 as uuid } from 'uuid';
 
-import Beverage from './Beverage'
-import andros_AppleJuice from '../Images/Andros_AppleJuice.avif'
-import theglace from '../Images/Honest_TheGlaceBio.jpg'
+
+import Beverage from './Beverage';
+import andros_AppleJuice from '../Images/Andros_AppleJuice.avif';
+import theglace from '../Images/Honest_TheGlaceBio.jpg';
 
 /**
  * Fonctionnalités:
@@ -13,13 +15,16 @@ import theglace from '../Images/Honest_TheGlaceBio.jpg'
 class Beverages extends React.Component{
     constructor(props){
         super(props);
+        this.handleDeletion = this.handleDeletion.bind(this);
         this.state={
             listBeverages: [
-                <Beverage beverageName="Pommes préssées" 
+                <Beverage beverageID= {uuid()}
+                    beverageName="Pommes préssées"
                     productorName="Andros"
                     image={andros_AppleJuice}
                     grade={5}/>,
-                <Beverage beverageName="Thé Glacé Bio" 
+                <Beverage beverageID= {uuid()}
+                    beverageName="Thé Glacé Bio" 
                     productorName="Honest"
                     image={theglace}
                     grade={5}/>    
@@ -27,14 +32,12 @@ class Beverages extends React.Component{
         }
     }
 
+    handleDeletion(event){
+        console.log("HANDLEDELETION" + event.target.value);
 
-    showBeverage(){
-        const listItems = this.state.listBeverages.map((e) =>
-            <li key={e.beverageName}>{e}</li>
-        );
-        return(
-            <ul>{listItems}</ul>
-        )
+        this.setState({listBeverages: this.state.listBeverages.filter(function(beverageID){
+            return beverageID !== event.target.value
+        })});
     }
 
     render(){
@@ -43,8 +46,9 @@ class Beverages extends React.Component{
             <div className='Beverages'>
                La séléction des chef:         
                {this.state.listBeverages.map(Beverage => 
-                <div key={Beverage.beverageID}> 
+                <div key={this.beverageID}> 
                     {Beverage}
+                    <button onClick={this.handleDeletion}>Supprimer dans parents</button>
                 </div>    
                )}      
             </div>

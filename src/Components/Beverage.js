@@ -27,10 +27,6 @@ class Beverage extends React.Component{
 
     }
 
-    handleChange(event){
-        console.log("Suppression de l'élément");
-    }
-
     render(){
         return(
             <div>
@@ -40,7 +36,6 @@ class Beverage extends React.Component{
                     Produit par: {this.props.productorName}<br/>
                     Note: {this.props.grade}/5 <br/>
                 </p>
-                <button onClick={this.handleChange}>Supprimer</button>
             </div>
         )
     }
