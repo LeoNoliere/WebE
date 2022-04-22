@@ -47,8 +47,8 @@ class Beverages extends React.Component{
             <div className='Beverages'>
                 
             La séléction des chef:       
-            {this.state.listBeveragesDevelopers.map(Beverage => 
-                <div key={this.beverageID}> 
+            {this.state.listBeveragesDevelopers.map((Beverage,index) => 
+                <div key={index}> 
                     {Beverage}
                     <button value={this.beverageID} onClick={this.handleDeletion}>Supprimer dans parents</button>
                 </div>    
