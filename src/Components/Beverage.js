@@ -1,6 +1,7 @@
 import React from 'react'
 import { v4 as uuid } from 'uuid';
 
+import '../CSS/beverage.css';
 
 /**
  * Cette classe à pour but de caractériser une boisson
@@ -29,13 +30,11 @@ class Beverage extends React.Component{
 
     render(){
         return(
-            <div>
-                <h1>{this.props.beverageName} - {this.props.productorName}</h1>
-                <p>
-                    <img src={this.props.image} alt={this.props.beverageName} height="200" width="200"></img><br/>
-                    Produit par: {this.props.productorName}<br/>
-                    Note: {this.props.grade}/5 <br/>
-                </p>
+            <div className="beverage">
+				<h2>{this.props.beverageName}</h2>
+                <img src={this.props.image} alt={this.props.beverageName}></img><br/>
+                <h2>{this.props.productorName}</h2>
+                <p>Note: {this.props.grade}/5</p>
             </div>
         )
     }
