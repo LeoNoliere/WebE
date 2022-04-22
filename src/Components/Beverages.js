@@ -69,8 +69,12 @@ class Beverages extends React.Component{
         this.setState({listBeveragesUser: update});        
     }
 
-    handleDeletionUser(props){
-        console.log(props.value);
+    handleDeletionUser(event){
+        console.log("Index: "+ event.target.value);
+        var tab = [...this.state.listBeveragesUser];
+        var index = event.target.value;
+        tab.splice(index, 1);
+        this.setState({listBeveragesUser: tab});
     }
 
     
@@ -104,9 +108,9 @@ class Beverages extends React.Component{
                         </form>     
                     </div>
                     {this.state.listBeveragesUser.map((Beverage,index) => 
-                        <div className='BeverageUser' key={index}> 
+                        <div className='BeverageUser' key={index}>
                             {Beverage}
-                            <input type="button" value="Supprimer" onClick={this.handleDeletionUser(index)}/>
+                            <button value={index} onClick={this.handleDeletionUser}>Supprimer</button>
                         </div>    
                     )}
                 </div>    
