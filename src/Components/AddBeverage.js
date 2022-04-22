@@ -14,7 +14,7 @@ class AddBeverage extends React.Component{
         this.handleGrade = this.handleGrade.bind(this);
 
         this.handleAddBeverage = this.handleAddBeverage.bind(this);
-      }
+    }
 
       handleBeverageName(event){
           this.setState({beverageName: event.target.value});

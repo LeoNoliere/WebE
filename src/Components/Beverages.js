@@ -6,7 +6,7 @@ import Beverage from './Beverage';
 import andros_AppleJuice from '../Images/Andros_AppleJuice.avif';
 import theglace from '../Images/Honest_TheGlaceBio.jpg';
 import limonade from '../Images/Lorina_LimonadeArtisanale.jpg';
-import AddBeverage from './AddBeverage';
+
 
 /**
  * Fonctionnalités:
@@ -19,6 +19,10 @@ class Beverages extends React.Component{
         super(props);
         
         this.state={
+            beverageName:"",
+            productorName:"",
+            grade:0,
+            currentID:0,
             listBeveragesUser: [],
             listBeveragesDevelopers: [
                 <Beverage beverageID= {uuid()}
@@ -38,6 +42,35 @@ class Beverages extends React.Component{
                     grade={5}/>
             ]
         }
+        this.handleAddBeverage = this.handleAddBeverage.bind(this);
+        this.handleBeverageName = this.handleBeverageName.bind(this);
+        this.handleProductorName = this.handleProductorName.bind(this);
+        this.handleGrade = this.handleGrade.bind(this);
+        this.handleDeletionUser = this.handleDeletionUser.bind(this);
+
+    }
+
+    handleBeverageName(event){
+        this.setState({beverageName: event.target.value});
+    }
+
+    handleProductorName(event){
+      this.setState({productorName: event.target.value});
+    }
+
+    handleGrade(event){
+      this.setState({grade: event.target.value});
+    }
+
+    handleAddBeverage(){
+        var currentB = <Beverage beverageName={this.state.beverageName} productorName={this.state.productorName} grade={this.state.grade}/>;
+        var update = this.state.listBeveragesUser.slice();
+        update.push(currentB);
+        this.setState({listBeveragesUser: update});        
+    }
+
+    handleDeletionUser(props){
+        console.log(props.value);
     }
 
     
@@ -45,15 +78,38 @@ class Beverages extends React.Component{
     render(){
         return(
             <div className='Beverages'>
-                
-            La séléction des chef:       
-            {this.state.listBeveragesDevelopers.map((Beverage,index) => 
-                <div key={index}> 
-                    {Beverage}
-                    <button value={this.beverageID} onClick={this.handleDeletion}>Supprimer dans parents</button>
+                <div className='ChefSelection'>
+                    <h1>La séléction des chef:</h1>       
+                    {this.state.listBeveragesDevelopers.map((Beverage,index) => 
+                        <div className='BeverageDev' key={index}> 
+                            {Beverage}
+                        </div>    
+                    )}
+                </div>     
+
+                <div className='UserSelection'>
+                    <h1>Faites votre sélection:</h1> 
+                    <p>Faire un bouton pour clear le tableau</p>
+                    <div className='AddForm'>
+                        <form>
+                            <label>
+                                Nom de votre boisson: 
+                                <input type="text" onChange={this.handleBeverageName}/>
+                                Producteur de votre boisson:
+                                <input type="text" value={this.state.productorName} name="productorName" onChange={this.handleProductorName}/>
+                                Note que vous lui attribué: 
+                                <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
+                                <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
+                            </label>
+                        </form>     
+                    </div>
+                    {this.state.listBeveragesUser.map((Beverage,index) => 
+                        <div className='BeverageUser' key={index}> 
+                            {Beverage}
+                            <input type="button" value="Supprimer" onClick={this.handleDeletionUser(index)}/>
+                        </div>    
+                    )}
                 </div>    
-            )} 
-                     
             </div>
         )
     }
