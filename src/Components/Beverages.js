@@ -94,6 +94,8 @@ class Beverages extends React.Component{
 
                 <div className='UserSelection'>
                     <h1>Faites votre sélection:</h1>
+                    <br/>
+                    <br/>
                     <div className='AddForm'>
                         <form>
                             <label>
@@ -112,12 +114,15 @@ class Beverages extends React.Component{
                     </div>
 
                     <p>Faire un bouton pour clear le tableau</p>
-                    {this.state.listBeveragesUser.map((Beverage,index) => 
-                        <div className='BeverageUser' key={index}>
-                            {Beverage}
-                            <button value={index} onClick={this.handleDeletionUser}>Supprimer</button>
-                        </div>    
-                    )}
+                    <div className="UserBeveragesList">
+	                    {this.state.listBeveragesUser.map((Beverage,index) =>
+	                        <div className='BeverageUser' key={index}>
+	                            {Beverage}
+	                            <br/>
+	                            <button value={index} onClick={this.handleDeletionUser}>Supprimer</button>
+	                        </div>
+	                    )}
+                    </div>
                 </div>    
             </div>
         )

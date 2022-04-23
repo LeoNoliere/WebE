@@ -9,19 +9,6 @@
 	box-sizing: border-box;
 }
 
-.Beverages.h1
-{
-	grid-row: 1 / 2;
-}
-
-.ChefSelection
-{
-	grid-row: 2 / 3;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 .BeverageDev
 {
 	color: black;
@@ -36,25 +23,98 @@
 	box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
 }
 
+.BeverageDev img
+{
+	height: 10vw;
+	width: 5vw;
+	border: 2px solid black;
+	border-radius: 50%;
+	padding: 5vh;
+	margin: 4vh;
+	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75) inset;
+}
+
+userBeveragesList
+{
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.BeverageUser
+{
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 3vh;
+	border: 2px solid black;
+	padding: 5px;
+	width: 15vw;
+	background-color: white;
+}
+
+.BeverageUser img
+{
+	height: 7vw;
+	width: 3vw;
+	border: 2px solid black;
+	border-radius: 50%;
+	padding: 2vh;
+	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75) inset;
+}
+
+.ChefSelection
+{
+	grid-row: 2 / 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .UserSelection
 {
 	grid-row: 3 / 4;
 }
 
+/**********************************************/
+
+.Beverages.h1
+{
+	grid-row: 1 / 2;
+}
+
+input
+{
+	border: none;
+}
+
+button,
 input[type=button]
 {
+	border: 1px solid black;
 	width: 20rem;
+	cursor: pointer;
+	padding: 5px;
+	background-color: white;
+	border-radius: 5px;
+	transition: 0.3s 0s ease-in-out;
+}
+
+button
+{
+	width: 10vw;
+	border-radius: 10vw;
+}
+
+button,
+input[type=button]:hover
+{
+	transition: 0.3s 0s ease-in-out;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
 }
 
 input[type=number]
 {
 	width: 2.5rem;
-}
-
-.BeverageUser
-{
-	box-sizing: border-box;
-	margin: 3vh;
-	border: 2px solid black;
-	width: 500px;
 }

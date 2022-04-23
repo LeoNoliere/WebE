@@ -9,7 +9,11 @@ class Intro extends React.Component{
         return(
             <div className='Intro'>
                 <Music url={Dolce_Vita}/>
-                <h3>Bonjour et bienvenue dans le TP React de l'option Web Engineering</h3>
+                <h3>Bonjour et bienvenue dans le TP React</h3>
+                <br/>
+                <div class="introImg"></div>
+                <br/>
+                <h3>de l'option Web Engineering</h3>
             </div>
         )
     }

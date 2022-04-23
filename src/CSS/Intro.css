@@ -1,4 +1,28 @@
 .Intro
 {
-	text-align: center;
+	text-align:center;
+}
+
+.Intro h3
+{
+	color: white;
+	font-size: 5vh;
+    font-family: titleFont;
+    margin: 0;
+    margin-top: 2vh;
+    text-shadow: -2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.introImg
+{
+	display: block;
+	background-image: url("../Images/intro.jpg");
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	border: 2px solid black;
+	box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+	width: 25vw;
+	height: 50vh;
+	margin: auto;
 }

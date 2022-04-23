@@ -36,10 +36,15 @@ body
 {
 	font-family: Garamond, serif;
 	background-color: #F7DEE2;
+	padding-top: 2.5rem;
 }
 
 .navbar
 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	display: grid;
 	background-color: white;
 	color: black;
@@ -58,11 +63,20 @@ body
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;
+	transition: 0.5s 0s ease-in-out;
+}
+
+
+
+#about
+{
+	border-right: none;
 }
 
 .navbar li:hover
 {
-	background-color: rgba(0, 0, 0, 0.3);
+	transition: 0.5s 0s ease-in-out;
+	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75) inset;
 }
 
 a

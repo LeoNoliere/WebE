@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../CSS/music.css';
 import Sound from 'react-sound';
 import Pause from '../Images/PauseButton.svg';
 
@@ -26,12 +26,9 @@ class Music extends React.Component {
     }
 
     render() {
-      const PauseButton = <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-      width="10%" height="10%" viewBox="0 0 10 10"
-      preserveAspectRatio="xMidYMid meet">
+      const PauseButton = <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" preserveAspectRatio="xMidYMid meet">
      
-     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-     fill="#000000" stroke="none">
+     <g stroke="none">
      <path d="M1076 5104 c-253 -57 -445 -229 -533 -479 l-28 -80 0 -1985 0 -1985
      28 -80 c111 -316 400 -513 723 -492 180 12 325 79 460 212 64 64 90 98 126
      172 90 179 83 -7 83 2173 0 2180 7 1994 -83 2173 -81 163 -239 296 -417 353
@@ -58,7 +55,7 @@ class Music extends React.Component {
     </svg>
 
       return (
-        <div>
+        <div className="music">
         <Sound
           url={this.props.url}
           playStatus={this.state.playStatus}
@@ -69,8 +66,9 @@ class Music extends React.Component {
           loop={true}
           volume={50}
         />
-        <button onClick={this.handlePause}>{PauseButton}</button>
-        <button onClick={this.handlePlay}>{PlayButton}</button>
+        <input type="checkbox" id="pauseCheck"/>
+        <label for="pauseCheck" id="pause" onClick={this.handlePause}>{PauseButton}</label>
+        <label for="pauseCheck" id="play" onClick={this.handlePlay}>{PlayButton}</label>
         </div>
       );
     }

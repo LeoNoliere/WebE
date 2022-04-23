@@ -1,0 +1,45 @@
+.music label
+{
+	box-sizing: border-box;
+	position: fixed;
+	top: .25rem;
+	right: .25rem;
+	z-index: 100;
+	width: 3rem;
+	height: 1.5rem;
+	border: 2px solid black;
+	cursor: pointer;
+}
+
+#play
+{
+	display: none;
+	background-image: url("../Images/PlayImage.svg");
+	background-size: auto 1rem;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+#pause
+{
+	background-image: url("../Images/PauseButton.svg");
+	background-size: auto 1rem;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+input[type="checkbox"]
+{
+	display: none;
+}
+
+#pauseCheck:checked ~ #pause
+{
+	display: none;
+}
+
+#pauseCheck:checked ~ #play
+{
+	display: block;
+}
