@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
+import ImageUploader from 'react-image-upload';
 
 
 import '../CSS/beverages.css';
@@ -16,6 +17,7 @@ import limonade from '../Images/Lorina_LimonadeArtisanale.jpg';
  * Possibilité de supprimer des éléments de la liste
  * Possibilité d'entrer un nouvel élément dans la liste
  */
+
 class Beverages extends React.Component{
     constructor(props){
         super(props);
@@ -25,7 +27,7 @@ class Beverages extends React.Component{
             productorName:"",
             grade:0,
             currentID:0,
-            selectedPicture: null,
+            Image: [],
             pictureName: "",
             listBeveragesUser: [],
             listBeveragesDevelopers: [
@@ -76,18 +78,17 @@ class Beverages extends React.Component{
     }
 
     handleDeletionUser(event){
-        console.log("Index: "+ event.target.value);
         var tab = [...this.state.listBeveragesUser];
         var index = event.target.value;
         tab.splice(index, 1);
         this.setState({listBeveragesUser: tab});
     }
 
-    handlePicture(event){
-        console.log(event.target.files[0]);
-        this.setState({pictureName: event.target.value});
-        this.setState({selectedPicture: event.target.files[0]});
-        
+    
+    handlePicture(e){
+        console.log("HandlePicture");
+        this.setState({Image: this.state.Image.concat(e)});
+        console.log("Image: " + this.state.Image);
     }
 
 
@@ -121,8 +122,7 @@ class Beverages extends React.Component{
                                 <label for="grade">Note que vous lui attribuez : </label>
                                 <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
                                 <br/><br/>
-                                <label for="drinkPicture">Sélectionnez votre photo : </label>
-                                <input type="file" name="drinkPicture" onChange={this.handlePicture}/>
+                                <ImageUploader withIcon={true} buttonText='Selectionnez votre image' onChange={this.handlePicture} imgExtension={['.jpg', '.gif', '.png']} maxFileSize={5242800}/>
                                 <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
@@ -145,3 +145,8 @@ class Beverages extends React.Component{
 }
 
 export default Beverages;
+
+/*
+<label for="drinkPicture">Sélectionnez votre photo : </label>
+<input type="file" accept="image/*" multiple="false" name="drinkPicture" onChange={this.handlePicture}/>
+*/

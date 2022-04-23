@@ -1,7 +1,6 @@
 import React from 'react';
 import '../CSS/music.css';
 import Sound from 'react-sound';
-import Pause from '../Images/PauseButton.svg';
 
 
 class Music extends React.Component {
