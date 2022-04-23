@@ -67,6 +67,7 @@ class Music extends React.Component {
           onPlaying={this.handleSongPlaying}
           onFinishedPlaying={this.handleSongFinishedPlaying}
           loop={true}
+          volume={50}
         />
         <button onClick={this.handlePause}>{PauseButton}</button>
         <button onClick={this.handlePlay}>{PlayButton}</button>
