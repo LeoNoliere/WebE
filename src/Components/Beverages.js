@@ -116,10 +116,9 @@ class Beverages extends React.Component{
                     <p>Faire un bouton pour clear le tableau</p>
                     <div className="UserBeveragesList">
 	                    {this.state.listBeveragesUser.map((Beverage,index) =>
-	                        <div className='BeverageUser' key={index}>
+	                        <div className='beverageUser' key={index}>
 	                            {Beverage}
-	                            <br/>
-	                            <button value={index} onClick={this.handleDeletionUser}>Supprimer</button>
+	                            <button className="removeBev" value={index} onClick={this.handleDeletionUser}>Supprimer</button>
 	                        </div>
 	                    )}
                     </div>

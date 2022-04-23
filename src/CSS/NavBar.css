@@ -58,6 +58,7 @@ a
 	color: inherit;
 }
 /*************************************************/
+/***********************NAVBAR********************/
 .navbar
 {
 	position: fixed;
@@ -90,3 +91,42 @@ a
 	transition: 0.5s 0s ease-in-out;
 	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75) inset;
 }
+/*************************************************/
+/**********************INPUTS*********************/
+
+input
+{
+	border: none;
+	font-family: Garamond, serif;
+}
+
+button,
+input[type=button]
+{
+	border: 1px solid black;
+	width: 20rem;
+	cursor: pointer;
+	padding: 5px;
+	background-color: white;
+	border-radius: 5px;
+	transition: 0.3s 0s ease-in-out;
+}
+
+button
+{
+	width: 10vw;
+	border-radius: 10vw;
+}
+
+button,
+input[type=button]:hover
+{
+	transition: 0.3s 0s ease-in-out;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+}
+
+input[type=number]
+{
+	width: 2.5rem;
+}
+/*************************************************/

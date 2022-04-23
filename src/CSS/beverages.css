@@ -46,7 +46,7 @@
 	box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
 }
 
-.beverageName
+.beverageDev .beverageName
 {
 	grid-row: 1 / 2;
 	grid-column: 1 / 2;
@@ -54,13 +54,13 @@
 	left: 0px;
 }
 
-.beverageProducer
+.beverageDev .beverageProducer
 {
 	grid-row: 3 / 4;
 	grid-column: 1 / 2;
 }
 
-.beverage p
+.beverageDev .beverage p
 {
 	grid-column: 1 / 2;
 	grid-row: 4 / 5;
@@ -76,10 +76,10 @@ userBeveragesList
 	justify-content: center;
 }
 
-.BeverageUser
+.beverageUser
 {
 	display: grid;
-	grid-template-rows: 6.5vh auto 2vh auto auto;
+	grid-template-rows: 6.5vh 350px 2vh auto auto;
 	grid-template-columns: 100%;
 	align-items: center;
 	justify-content: center;
@@ -93,59 +93,30 @@ userBeveragesList
 	box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
 }
 
-.beverageUser h2
+.beverageUser .beverageName
 {
 	grid-row: 1 / 2;
 	grid-column: 1 / 2;
+	height:
 }
 
-.BeverageUser img
+.beverageUser .beverageProducer
 {
-	grid-row: 2 / 3;
+	grid-row: 3 / 4;
 	grid-column: 1 / 2;
-	height: 7vw;
-	width: 3vw;
-	border: 2px solid black;
-	border-radius: 50%;
-	padding: 2vh;
-	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75) inset;
 }
 
-/**********************************************/
-
-
-input
+.beverageUser .beverage p
 {
-	border: none;
-	font-family: Garamond, serif;
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
 }
 
-button,
-input[type=button]
+.removeBev
 {
-	border: 1px solid black;
-	width: 20rem;
-	cursor: pointer;
-	padding: 5px;
-	background-color: white;
-	border-radius: 5px;
-	transition: 0.3s 0s ease-in-out;
+	grid-column: 1 / 2;
+	grid-row: 5 / 6;
+	margin-left: 50%;
+    transform: translateX(-50%);
 }
-
-button
-{
-	width: 10vw;
-	border-radius: 10vw;
-}
-
-button,
-input[type=button]:hover
-{
-	transition: 0.3s 0s ease-in-out;
-	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
-}
-
-input[type=number]
-{
-	width: 2.5rem;
-}
+/*************************************************/
