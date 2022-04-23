@@ -1,67 +1,17 @@
+/*********************GENERAL*********************/
 .Beverages
 {
 	display: grid;
 	align-items: center;
 	justify-content: center;
-	grid-template-rows: auto auto auto;
+	grid-template-rows: auto auto auto auto auto;
 	text-align: center;
 	grid-gap: 2vh;
-	box-sizing: border-box;
 }
 
-.BeverageDev
+.Beverages h1
 {
-	color: black;
-	box-sizing: border-box;
-	margin: 3vh;
-	background-color: white;
-	width: 20vw;
-	height: 30vw;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
-}
-
-.BeverageDev img
-{
-	height: 10vw;
-	width: 5vw;
-	border: 2px solid black;
-	border-radius: 50%;
-	padding: 5vh;
-	margin: 4vh;
-	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75) inset;
-}
-
-userBeveragesList
-{
-	display: flex;
-	flex-direction: row;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-}
-
-.BeverageUser
-{
-	display: inline-block;
-	box-sizing: border-box;
-	margin: 3vh;
-	border: 2px solid black;
-	padding: 5px;
-	width: 15vw;
-	background-color: white;
-}
-
-.BeverageUser img
-{
-	height: 7vw;
-	width: 3vw;
-	border: 2px solid black;
-	border-radius: 50%;
-	padding: 2vh;
-	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75) inset;
+	grid-row: 1 / 2;
 }
 
 .ChefSelection
@@ -76,13 +26,93 @@ userBeveragesList
 {
 	grid-row: 3 / 4;
 }
+/*************************************************/
+/*******************BEVERAGE DEV******************/
+.beverageDev
+{
+	display: grid;
+	grid-template-rows: 6.5vh auto 4vh auto;
+	grid-template-columns: 100%;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	padding-top: 15px;
+	color: black;
+	box-sizing: border-box;
+	margin: 3vh;
+	background-color: white;
+	width: max(20vw, 340px);
+	height: max(30vw, 510px);
+	box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+}
+
+.beverageName
+{
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	position: relative;
+	left: 0px;
+}
+
+.beverageProducer
+{
+	grid-row: 3 / 4;
+	grid-column: 1 / 2;
+}
+
+.beverage p
+{
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
+}
+/*************************************************/
+/******************BEVERAGE USER******************/
+userBeveragesList
+{
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.BeverageUser
+{
+	display: grid;
+	grid-template-rows: 6.5vh auto 2vh auto auto;
+	grid-template-columns: 100%;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	margin: 3vh;
+	border: 2px solid black;
+	width: max(15vw, 350px);
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+}
+
+.beverageUser h2
+{
+	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+}
+
+.BeverageUser img
+{
+	grid-row: 2 / 3;
+	grid-column: 1 / 2;
+	height: 7vw;
+	width: 3vw;
+	border: 2px solid black;
+	border-radius: 50%;
+	padding: 2vh;
+	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75) inset;
+}
 
 /**********************************************/
 
-.Beverages.h1
-{
-	grid-row: 1 / 2;
-}
 
 input
 {

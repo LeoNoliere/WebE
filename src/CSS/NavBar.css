@@ -1,15 +1,30 @@
+/**********************FONTS**********************/
 @font-face
 {
     font-family: titleFont;
-    src: url(Aston Script.ttf);
+    src: url(../Fonts/Aston Script.ttf);
 }
 
 @font-face
 {
     font-family: textFont;
-    src: url(Champignon.otf);
+    src: url(../Fonts/Champignon.otf);
+}
+/*************************************************/
+/*********************GENERAL*********************/
+body
+{
+	font-family: Garamond, serif;
+	background-color: #F7DEE2;
+	padding-top: 2.5rem;
 }
 
+div
+{
+	box-sizing: border-box;
+}
+/*************************************************/
+/***********************TEXT**********************/
 h1
 {
 	color: white;
@@ -30,16 +45,19 @@ h2
     text-shadow: 0px 0px 3px rgba(0,0,0,0.6);
     color: white;
     background-color: #F7DEE2;
-
 }
 
-body
+a
 {
-	font-family: Garamond, serif;
-	background-color: #F7DEE2;
-	padding-top: 2.5rem;
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	width: inherit;
+	height: inherit;
+	text-decoration: none;
+	color: inherit;
 }
-
+/*************************************************/
 .navbar
 {
 	position: fixed;
@@ -67,26 +85,8 @@ body
 	transition: 0.5s 0s ease-in-out;
 }
 
-
-
-#about
-{
-	border-right: none;
-}
-
 .navbar li:hover
 {
 	transition: 0.5s 0s ease-in-out;
 	box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75) inset;
-}
-
-a
-{
-	display: flex;
-	align-items:center;
-	justify-content:center;
-	width: inherit;
-	height: inherit;
-	text-decoration: none;
-	color: inherit;
 }

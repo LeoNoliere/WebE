@@ -85,10 +85,10 @@ class Beverages extends React.Component{
             <div className='Beverages'>
                 <h1>La séléction des chefs :</h1>
                 <div className='ChefSelection'>
-                    {this.state.listBeveragesDevelopers.map((Beverage,index) => 
-                        <div className='BeverageDev' key={index}> 
+                    {this.state.listBeveragesDevelopers.map((Beverage,index) =>
+                        <div className="beverageDev" key={index}>
                             {Beverage}
-                        </div>    
+                        </div>
                     )}
                 </div>     
 
@@ -102,11 +102,11 @@ class Beverages extends React.Component{
                                 <label for="drinkName">Nom de votre boisson : </label>
                                 <input type="text" name="drinkName" onChange={this.handleBeverageName}/>
                                 <br/><br/>
-                                <label for="drinkProducer">Producteur de votre boisson : </label>
-                                <input type="text" name="drinkProducer" value={this.state.productorName} name="productorName" onChange={this.handleProductorName}/>
+                                <label for="productorName">Producteur de votre boisson : </label>
+                                <input type="text" value={this.state.productorName} name="productorName" onChange={this.handleProductorName}/>
                                 <br/><br/>
-                                <label for="drinkGrade">Note que vous lui attribuez : </label>
-                                <input type="number" name="drinkGrade" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
+                                <label for="grade">Note que vous lui attribuez : </label>
+                                <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
                                 <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
