@@ -16,6 +16,7 @@ import limonade from '../Images/Lorina_LimonadeArtisanale.jpg';
  * Possibilité de supprimer des éléments de la liste
  * Possibilité d'entrer un nouvel élément dans la liste
  */
+
 class Beverages extends React.Component{
     constructor(props){
         super(props);
@@ -83,10 +84,19 @@ class Beverages extends React.Component{
         this.setState({listBeveragesUser: tab});
     }
 
+    
     handlePicture(event){
-        console.log(event.target.files[0]);
-        this.setState({pictureName: event.target.value});
-        this.setState({selectedPicture: event.target.files[0]});
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        const {current} = uploadedImage;
+        current.file = file;
+        reader.onload = (event) => {
+            current.src = event.target.result;
+        }
+        reader.readAsDataURL(file);
+        //console.log(event.target.files[0]);
+        //this.setState({pictureName: event.target.value});
+        //this.setState({selectedPicture: event.target.files[0]});
         
     }
 
@@ -122,7 +132,7 @@ class Beverages extends React.Component{
                                 <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
                                 <br/><br/>
                                 <label for="drinkPicture">Sélectionnez votre photo : </label>
-                                <input type="file" name="drinkPicture" onChange={this.handlePicture}/>
+                                <input type="file" accept="image/*" multiple="false" name="drinkPicture" onChange={this.handlePicture}/>
                                 <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
