@@ -2,7 +2,7 @@ import React from 'react';
 import Beverages from '../Beverages';
 import Music from '../Music';
 
-import ComeCloser from '../../Musics/Guts-Come_Closer_(2014).mp3'
+import ComeCloser from '../../Musics/ComeCloserUnpluggedWEBE.mp3'
 
 
 class Main extends React.Component{

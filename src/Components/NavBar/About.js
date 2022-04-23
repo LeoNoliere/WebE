@@ -5,7 +5,7 @@ import charly from '../../Images/CharlyB.jpg'
 import jules from '../../Images/god.png'
 
 import Music from '../Music.js';
-import Fantasy from '../../Musics/Meiko_Nakahara-Fantasy(1982).mp3';
+import Fantasy from '../../Musics/FantasyUnpluggedWEBE.mp3';
 
 
 class About extends React.Component{
