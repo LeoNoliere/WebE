@@ -30,12 +30,12 @@ class Beverage extends React.Component{
 
     render(){
         return(
-            <div className="beverage">
-				<h2>{this.props.beverageName}</h2>
-                <img src={this.props.image} alt={this.props.beverageName}></img><br/>
-                <h2>{this.props.productorName}</h2>
+            <>
+				<h2 className="beverageName">{this.props.beverageName}</h2>
+                <img src={this.props.image} alt={this.props.beverageName}/>
+                <h2 className="beverageProducer">{this.props.productorName}</h2>
                 <p>Note: {this.props.grade}/5</p>
-            </div>
+            </>
         )
     }
 }

@@ -60,7 +60,7 @@ class Music extends React.Component {
           url={this.props.url}
           playStatus={this.state.playStatus}
           playFromPosition={300 /* in milliseconds */}
-          onLoading={this.handleSongLoading}
+          //onLoading={this.handleSongLoading}
           onPlaying={this.handleSongPlaying}
           onFinishedPlaying={this.handleSongFinishedPlaying}
           loop={true}
