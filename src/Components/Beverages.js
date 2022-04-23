@@ -1,9 +1,10 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
 
+import '../CSS/beverages.css';
 
 import Beverage from './Beverage';
-import andros_AppleJuice from '../Images/Andros_AppleJuice.avif';
+import andros_AppleJuice from '../Images/andros.jpg';
 import theglace from '../Images/Honest_TheGlaceBio.jpg';
 import limonade from '../Images/Lorina_LimonadeArtisanale.jpg';
 
@@ -82,8 +83,8 @@ class Beverages extends React.Component{
     render(){
         return(
             <div className='Beverages'>
+                <h1>La séléction des chefs :</h1>
                 <div className='ChefSelection'>
-                    <h1>La séléction des chef:</h1>       
                     {this.state.listBeveragesDevelopers.map((Beverage,index) => 
                         <div className='BeverageDev' key={index}> 
                             {Beverage}
@@ -92,21 +93,25 @@ class Beverages extends React.Component{
                 </div>     
 
                 <div className='UserSelection'>
-                    <h1>Faites votre sélection:</h1> 
-                    <p>Faire un bouton pour clear le tableau</p>
+                    <h1>Faites votre sélection:</h1>
                     <div className='AddForm'>
                         <form>
                             <label>
-                                Nom de votre boisson: 
-                                <input type="text" onChange={this.handleBeverageName}/>
-                                Producteur de votre boisson:
-                                <input type="text" value={this.state.productorName} name="productorName" onChange={this.handleProductorName}/>
-                                Note que vous lui attribué: 
-                                <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
+                                <label for="drinkName">Nom de votre boisson : </label>
+                                <input type="text" name="drinkName" onChange={this.handleBeverageName}/>
+                                <br/><br/>
+                                <label for="drinkProducer">Producteur de votre boisson : </label>
+                                <input type="text" name="drinkProducer" value={this.state.productorName} name="productorName" onChange={this.handleProductorName}/>
+                                <br/><br/>
+                                <label for="drinkGrade">Note que vous lui attribuez : </label>
+                                <input type="number" name="drinkGrade" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
+                                <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
                         </form>     
                     </div>
+
+                    <p>Faire un bouton pour clear le tableau</p>
                     {this.state.listBeveragesUser.map((Beverage,index) => 
                         <div className='BeverageUser' key={index}>
                             {Beverage}

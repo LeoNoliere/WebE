@@ -1,13 +1,54 @@
+@font-face
+{
+    font-family: titleFont;
+    src: url(Aston Script.ttf);
+}
+
+@font-face
+{
+    font-family: textFont;
+    src: url(Champignon.otf);
+}
+
+h1
+{
+	color: white;
+	font-size: 5vh;
+    font-family: titleFont;
+    margin: 0;
+    margin-top: 2vh;
+    text-shadow: -2px 2px 6px rgba(0,0,0,0.6);
+}
+
+h2
+{
+	margin: 0;
+	font-family: textFont;
+	font-size: 5vh;
+	line-height: 5vh;
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.6);
+    color: white;
+    background-color: #F7DEE2;
+
+}
+
+body
+{
+	font-family: Garamond, serif;
+	background-color: #F7DEE2;
+}
+
 .navbar
 {
 	display: grid;
-	background-color: green;
+	background-color: white;
+	color: black;
 	align-items: center;
 	justify-items: center;
 	height: 2rem;
 	grid-template-columns: 10vw 10vw 10vw;
-	color: white;
 	padding-left: 5px;
+	box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
 }
 
 .navbar li
@@ -17,7 +58,6 @@
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;
-	color: white;
 }
 
 .navbar li:hover

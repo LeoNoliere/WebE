@@ -1,0 +1,60 @@
+.Beverages
+{
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	grid-template-rows: auto auto auto;
+	text-align: center;
+	grid-gap: 2vh;
+	box-sizing: border-box;
+}
+
+.Beverages.h1
+{
+	grid-row: 1 / 2;
+}
+
+.ChefSelection
+{
+	grid-row: 2 / 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.BeverageDev
+{
+	color: black;
+	box-sizing: border-box;
+	margin: 3vh;
+	background-color: white;
+	width: 20vw;
+	height: 30vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+}
+
+.UserSelection
+{
+	grid-row: 3 / 4;
+}
+
+input[type=button]
+{
+	width: 20rem;
+}
+
+input[type=number]
+{
+	width: 2.5rem;
+}
+
+.BeverageUser
+{
+	box-sizing: border-box;
+	margin: 3vh;
+	border: 2px solid black;
+	width: 500px;
+}
