@@ -1,6 +1,7 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
 
+
 import '../CSS/beverages.css';
 
 import Beverage from './Beverage';
@@ -24,6 +25,8 @@ class Beverages extends React.Component{
             productorName:"",
             grade:0,
             currentID:0,
+            selectedPicture: null,
+            pictureName: "",
             listBeveragesUser: [],
             listBeveragesDevelopers: [
                 <Beverage beverageID= {uuid()}
@@ -48,6 +51,8 @@ class Beverages extends React.Component{
         this.handleProductorName = this.handleProductorName.bind(this);
         this.handleGrade = this.handleGrade.bind(this);
         this.handleDeletionUser = this.handleDeletionUser.bind(this);
+        this.handlePicture = this.handlePicture.bind(this);
+        //this.handleUpload = this.handleUpload.bind(this);
 
     }
 
@@ -64,7 +69,7 @@ class Beverages extends React.Component{
     }
 
     handleAddBeverage(){
-        var currentB = <Beverage beverageName={this.state.beverageName} productorName={this.state.productorName} grade={this.state.grade}/>;
+        var currentB = <Beverage beverageName={this.state.beverageName} productorName={this.state.productorName} grade={this.state.grade} image={this.state.selectedPicture}/>;
         var update = this.state.listBeveragesUser.slice();
         update.push(currentB);
         this.setState({listBeveragesUser: update});        
@@ -77,6 +82,14 @@ class Beverages extends React.Component{
         tab.splice(index, 1);
         this.setState({listBeveragesUser: tab});
     }
+
+    handlePicture(event){
+        console.log(event.target.files[0]);
+        this.setState({pictureName: event.target.value});
+        this.setState({selectedPicture: event.target.files[0]});
+        
+    }
+
 
     
 
@@ -108,6 +121,9 @@ class Beverages extends React.Component{
                                 <label for="grade">Note que vous lui attribuez : </label>
                                 <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
                                 <br/><br/>
+                                <label for="drinkPicture">Sélectionnez votre photo : </label>
+                                <input type="file" name="drinkPicture" onChange={this.handlePicture}/>
+                                <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
                         </form>     
@@ -129,83 +145,3 @@ class Beverages extends React.Component{
 }
 
 export default Beverages;
-
-/*
-{this.state.listBeverages.forEach(
-    item => {
-        <li key={item.beverageID}>{item.beverageName}</li>
-    }
-)}
-
-<ul>
-    {this.state.listBeverages.map(item => {
-        return <li key={item.beverageID}>{item.beverageName}</li>
-    })}
-</ul> 
-*/
-
-//<AddBeverage onAddBeverage={this.handleAddBeverage}/>
-
-
-//CONSTRUCTOR:
-/*
-this.handleBeverageName = this.handleBeverageName.bind(this);
-        this.handleProductorName = this.handleProductorName.bind(this);
-        this.handleGrade = this.handleGrade.bind(this);
-
-        this.handleAddBeverage = this.handleAddBeverage.bind(this);
-        this.handleDeletion = this.handleDeletion.bind(this);
-*/
-
-
-//FUNCTIONS:
-/*
-handleBeverageName(event){
-        this.setState({beverageName: event.target.value});
-    }
-
-    handleProductorName(event){
-      this.setState({productorName: event.target.value});
-    }
-
-    handleGrade(event){
-      this.setState({grade: event.target.value});
-    }
-
-    handleAddBeverage(){
-        this.setState(previousState => ({
-            listBeverages:[...previousState.listBeverages, 'nouvellevaleur']
-        }));
-        console.log("List: " + this.state.listBeverages);
-    }
-
-    handleDeletion(event){
-        console.log("HANDLEDELETION" + event.target.value);
-
-        this.setState({listBeverages: this.state.listBeverages.filter(function(beverageID){
-            return beverageID !== event.target.value
-        })});
-    }
-*/
-
-//FORMULAIRE RENDER
-/*
-<form>
-                    <label>
-                        Nom de votre boisson: 
-                        <input type="text" onChange={this.handleBeverageName}/>
-                        Producteur de votre boisson:
-                        <input type="text" onChange={this.handleProductorName}/>
-                        Note que vous lui attribué: 
-                        <input type="text" onChange={this.handleGrade}/>
-                        <input type="submit" value="Ajouter" onClick={this.handleAddBeverage}/>
-                    </label>
-                </form>
-
-{this.state.listBeverages.map(Beverage => 
-                <div key={this.beverageID}> 
-                    {Beverage}
-                    <button value={this.beverageID} onClick={this.handleDeletion}>Supprimer dans parents</button>
-                </div>    
-               )}                
-*/
