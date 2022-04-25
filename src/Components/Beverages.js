@@ -48,6 +48,7 @@ class Beverages extends React.Component{
         this.handleProductorName = this.handleProductorName.bind(this);
         this.handleGrade = this.handleGrade.bind(this);
         this.handleDeletionUser = this.handleDeletionUser.bind(this);
+        this.handleDeleteAll = this.handleDeleteAll.bind(this);
     }
 
     handleBeverageName(event){
@@ -73,6 +74,11 @@ class Beverages extends React.Component{
         var tab = [...this.state.listBeveragesUser];
         var index = event.target.value;
         tab.splice(index, 1);
+        this.setState({listBeveragesUser: tab});
+    }
+
+    handleDeleteAll(event){
+        var tab = [];
         this.setState({listBeveragesUser: tab});
     }
 
@@ -102,14 +108,16 @@ class Beverages extends React.Component{
                                 <input type="text" value={this.state.productorName} name="productorName" onChange={this.handleProductorName}/>
                                 <br/><br/>
                                 <label for="grade">Note que vous lui attribuez : </label>
-                                <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
+                                <input type="number" value={this.state.grade} name="grade" min="0" max="5" onChange={this.handleGrade}/>
                                 <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
+                                <br/><br/>
+                                <input type="button" value="Vider liste" onClick={this.handleDeleteAll}/>
                             </label>
                         </form>     
                     </div>
 
-                    <p>Faire un bouton pour clear le tableau</p>
+
                     <div className="userBeveragesList">
 	                    {this.state.listBeveragesUser.map((Beverage,index) =>
 	                        <div className='beverageUser' key={index}>

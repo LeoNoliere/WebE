@@ -14,8 +14,8 @@ class Dev extends React.Component{
         return(
             <div className='Dev'>
                 <img src={this.props.devPicture}/> <br/>
-                Nom : {this.props.devLastName} <br/>
-                Prénom : {this.props.devFirstName} <br/>
+                {this.props.devLastName} <br/>
+                {this.props.devFirstName} <br/>
             </div>
         )
     }
