@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
-import ImageUploader from 'react-image-upload';
+//import ImageUploader from 'react-image-upload';
 
 
 import '../CSS/beverages.css';
@@ -122,7 +122,6 @@ class Beverages extends React.Component{
                                 <label for="grade">Note que vous lui attribuez : </label>
                                 <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
                                 <br/><br/>
-                                <ImageUploader withIcon={true} buttonText='Selectionnez votre image' onChange={this.handlePicture} imgExtension={['.jpg', '.gif', '.png']} maxFileSize={5242800}/>
                                 <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
