@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 as uuid } from 'uuid';
 import ImageUploader from 'react-image-upload';
 
-
+import Upload from '../Components/Upload';
 import '../CSS/beverages.css';
 
 import Beverage from './Beverage';
@@ -122,7 +122,6 @@ class Beverages extends React.Component{
                                 <label for="grade">Note que vous lui attribuez : </label>
                                 <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
                                 <br/><br/>
-                                <ImageUploader withIcon={true} buttonText='Selectionnez votre image' onChange={this.handlePicture} imgExtension={['.jpg', '.gif', '.png']} maxFileSize={5242800}/>
                                 <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
@@ -134,6 +133,7 @@ class Beverages extends React.Component{
 	                    {this.state.listBeveragesUser.map((Beverage,index) =>
 	                        <div className='beverageUser' key={index}>
 	                            {Beverage}
+                                <Upload/>
 	                            <button className="removeBev" value={index} onClick={this.handleDeletionUser}>Supprimer</button>
 	                        </div>
 	                    )}
