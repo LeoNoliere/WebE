@@ -1,6 +1,4 @@
-### Binôme
-Beaugas Charli
-Benveniste Jule
+### Binôme: Beaugas Charly - Benveniste Jules
 
 ## Available Scripts
 
