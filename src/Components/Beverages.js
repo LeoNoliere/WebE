@@ -1,15 +1,12 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
-//import ImageUploader from 'react-image-upload';
 
-import Upload from '../Components/Upload';
 import '../CSS/beverages.css';
 
 import Beverage from './Beverage';
 import andros_AppleJuice from '../Images/andros.jpg';
 import theglace from '../Images/Honest_TheGlaceBio.jpg';
 import limonade from '../Images/Lorina_LimonadeArtisanale.jpg';
-
 
 /**
  * Fonctionnalités:
@@ -26,9 +23,7 @@ class Beverages extends React.Component{
             beverageName:"",
             productorName:"",
             grade:0,
-            currentID:0,
-            Image: [],
-            pictureName: "",
+            image: new Image(),
             listBeveragesUser: [],
             listBeveragesDevelopers: [
                 <Beverage beverageID= {uuid()}
@@ -53,9 +48,6 @@ class Beverages extends React.Component{
         this.handleProductorName = this.handleProductorName.bind(this);
         this.handleGrade = this.handleGrade.bind(this);
         this.handleDeletionUser = this.handleDeletionUser.bind(this);
-        this.handlePicture = this.handlePicture.bind(this);
-        //this.handleUpload = this.handleUpload.bind(this);
-
     }
 
     handleBeverageName(event){
@@ -83,16 +75,6 @@ class Beverages extends React.Component{
         tab.splice(index, 1);
         this.setState({listBeveragesUser: tab});
     }
-
-    
-    handlePicture(e){
-        console.log("HandlePicture");
-        this.setState({Image: this.state.Image.concat(e)});
-        console.log("Image: " + this.state.Image);
-    }
-
-
-    
 
     render(){
         return(
@@ -122,7 +104,6 @@ class Beverages extends React.Component{
                                 <label for="grade">Note que vous lui attribuez : </label>
                                 <input type="number" value={this.state.grade} name="grade" onChange={this.handleGrade}/>
                                 <br/><br/>
-                                <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                             </label>
                         </form>     
@@ -133,7 +114,6 @@ class Beverages extends React.Component{
 	                    {this.state.listBeveragesUser.map((Beverage,index) =>
 	                        <div className='beverageUser' key={index}>
 	                            {Beverage}
-                                <Upload/>
 	                            <button className="removeBev" value={index} onClick={this.handleDeletionUser}>Supprimer</button>
 	                        </div>
 	                    )}
