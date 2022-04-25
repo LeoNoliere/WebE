@@ -4,10 +4,12 @@
 	align-items: center;
 	justify-items: center;
 	grid-template-columns: max(40%, 200px) max(40%, 200px);
-	grid-template-rows: 5rem auto;
+	grid-template-rows: 15rem auto;
 	padding: 2rem;
 	margin-left: 15%;
 	grid-gap: 5vh;
+	color: white;
+    text-shadow: 0px 0px 6px rgba(0,0,0,0.9);
 }
 
 .About h3
@@ -17,6 +19,10 @@
 	text-align: center;
 	font-size: 2vw;
 	font-style: bold;
+    font-family: titleFont;
+    margin: 0;
+    margin-top: 2vh;
+    text-shadow: -2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .worstDev
@@ -54,7 +60,7 @@
 	height: 100%;
 	width: 17%;
 	background-image: url("../Images/left.png");
-	background-position: center;
+	background-position: left;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -67,7 +73,7 @@
 	height: 100%;
 	width: 17%;
 	background-image: url("../Images/right.png");
-	background-position: center;
+	background-position: right;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
