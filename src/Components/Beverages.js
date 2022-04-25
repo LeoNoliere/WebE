@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
-import ImageUploader from 'react-image-upload';
+//import ImageUploader from 'react-image-upload';
 
 import Upload from '../Components/Upload';
 import '../CSS/beverages.css';
@@ -129,7 +129,7 @@ class Beverages extends React.Component{
                     </div>
 
                     <p>Faire un bouton pour clear le tableau</p>
-                    <div className="UserBeveragesList">
+                    <div className="userBeveragesList">
 	                    {this.state.listBeveragesUser.map((Beverage,index) =>
 	                        <div className='beverageUser' key={index}>
 	                            {Beverage}

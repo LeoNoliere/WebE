@@ -32,9 +32,9 @@ class Beverage extends React.Component{
         return(
             <>
 				<h2 className="beverageName">{this.props.beverageName}</h2>
-                <img src={this.props.image} alt={this.props.beverageName}/>
+                <img class="beverageImage" src={this.props.image} alt={this.props.beverageName}/>
                 <h2 className="beverageProducer">{this.props.productorName}</h2>
-                <p>Note: {this.props.grade}/5</p>
+                <p class="beverageNote">Note: {this.props.grade}/5</p>
             </>
         )
     }

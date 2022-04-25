@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../CSS/About.css';
 class Dev extends React.Component{
     constructor(props){
         super(props);
@@ -13,7 +13,7 @@ class Dev extends React.Component{
     render(){
         return(
             <div className='Dev'>
-                <img src={this.props.devPicture} height="200" width="200"></img> <br/>
+                <img src={this.props.devPicture}/> <br/>
                 Nom : {this.props.devLastName} <br/>
                 Prénom : {this.props.devFirstName} <br/>
             </div>
