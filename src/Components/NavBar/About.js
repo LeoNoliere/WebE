@@ -11,14 +11,18 @@ import Fantasy from '../../Musics/FantasyUnpluggedWEBE.mp3';
 class About extends React.Component{
     render(){
         return(
-            <div className='About'>
-                <div className="aboutLeft"></div>
-                <div className="aboutRight"></div>
-                <Music url={Fantasy}/>
-                <h3>Voici les informations sur les développeurs qui on participé à ce TP :</h3>
-                <div class="worstDev"><Dev devPicture={charly} devLastName="Beaugas" devFirstName="Charly"/></div>
-                <div class="bestDev"><Dev devPicture={jules} devLastName="Benveniste" devFirstName="Jules"/></div>
-            </div>
+	        <>
+	            <div className="bridsLeft"></div>
+	            <div className="bridsRight"></div>
+	            <div className="aboutLeft"></div>
+	            <div className="aboutRight"></div>
+	            <div className='About'>
+	                <Music url={Fantasy}/>
+	                <h3>Voici les informations sur les développeurs qui on participé à ce TP :</h3>
+	                <div class="worstDev"><Dev devPicture={charly} devLastName="Beaugas" devFirstName="Charly"/></div>
+	                <div class="bestDev"><Dev devPicture={jules} devLastName="Benveniste" devFirstName="Jules"/></div>
+	            </div>
+            </>
         )
     }
 }

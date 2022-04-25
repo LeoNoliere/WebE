@@ -112,7 +112,7 @@ class Beverages extends React.Component{
                                 <br/><br/>
                                 <input type="button" value="Ajouter" onClick={this.handleAddBeverage}/>
                                 <br/><br/>
-                                <input type="button" value="Vider liste" onClick={this.handleDeleteAll}/>
+                                <input type="button" value="Vider la liste" onClick={this.handleDeleteAll}/>
                             </label>
                         </form>     
                     </div>
