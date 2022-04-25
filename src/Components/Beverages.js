@@ -7,6 +7,7 @@ import Beverage from './Beverage';
 import andros_AppleJuice from '../Images/andros.jpg';
 import theglace from '../Images/Honest_TheGlaceBio.jpg';
 import limonade from '../Images/Lorina_LimonadeArtisanale.jpg';
+import intro from '../Images/intro.jpg';
 
 /**
  * Fonctionnalités:
@@ -23,7 +24,7 @@ class Beverages extends React.Component{
             beverageName:"",
             productorName:"",
             grade:0,
-            image: new Image(),
+            image: {intro},
             listBeveragesUser: [],
             listBeveragesDevelopers: [
                 <Beverage beverageID= {uuid()}
@@ -64,7 +65,7 @@ class Beverages extends React.Component{
     }
 
     handleAddBeverage(){
-        var currentB = <Beverage beverageName={this.state.beverageName} productorName={this.state.productorName} grade={this.state.grade} image={this.state.selectedPicture}/>;
+        var currentB = <Beverage beverageName={this.state.beverageName} productorName={this.state.productorName} grade={this.state.grade} image={intro}/>;
         var update = this.state.listBeveragesUser.slice();
         update.push(currentB);
         this.setState({listBeveragesUser: update});        
