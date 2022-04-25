@@ -103,6 +103,12 @@
 	line-height: .8vh;
 }
 
+.beverageUser .beverageImage
+{
+	padding: 0px;
+	height: max(10vw, 280px);
+	width: max(5vw, 150px);
+}
 .beverageUser .beverageProducer
 {
 	grid-row: 3 / 4;
